@@ -8,9 +8,16 @@ class PlaylistRequest(BaseModel):
 
 app = FastAPI(title="YouTube Playlist Extractor API")
 
+# frontend ke domains ko allow kar rahe hain
+origins = [
+    "http://localhost:5173",  # Local testing ke liye
+    "https://ytplaylistextract.vercel.app",  # Tumhara live Vercel domain
+    "https://youtubelist-extractor-onrender.com" # Khud ka domain bhi add karna
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,  # Ab sirf defined origins allow honge
     allow_methods=["*"],
     allow_headers=["*"],
 )
