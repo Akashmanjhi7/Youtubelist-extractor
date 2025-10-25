@@ -126,49 +126,88 @@ h1 {
 }
 
 
-/* Video List Styling */
+/* -------------------------------------- */
+/* VIDEO LIST NEW STYLES (Thumbnail + Title + Copy) */
+/* -------------------------------------- */
+
 .video-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-.video-list li {
-    margin-bottom: 10px;
-    padding: 10px;
+
+/* Naya style for the main list item wrapper */
+.video-list .video-item-detail {
+    margin-bottom: 12px; 
+    padding: 12px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: center; 
     background: white;
     border-radius: 8px;
-    border: 1px solid #edf2f7;
+    border: 1px solid #e2e8f0;
     transition: box-shadow 0.2s;
+    gap: 15px; /* Components ke beech mein space */
 }
-.video-list li:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+.video-list .video-item-detail:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-.video-list a {
-    color: #2b6cb0; /* Link color */
-    word-break: break-word;
-    font-size: 0.95rem;
-    flex-grow: 1;
-    margin-right: 10px;
+
+/* Thumbnail Image style */
+.video-thumbnail {
+    width: 120px; /* Fixed width for thumbnail */
+    height: 67px; /* Approx 16:9 aspect ratio */
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0; /* Thumbnail shrink na ho */
+    /* Agar image load nahi hoti to width/height dikhe */
+    border: 1px solid #e2e8f0; 
+}
+
+/* Title ke liye container */
+.video-info {
+    flex-grow: 1; /* Title ko zyada space do */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+    padding-right: 10px;
+}
+
+.video-title {
+    /* FIX: Agar Title nahi dikh raha tha to ye display: block; zaroori hai */
+    display: block; 
+    font-size: 1rem;
+    color: #2d3748;
+    font-weight: 600;
+    white-space: nowrap; /* Title ek hi line mein rakho */
+    overflow: hidden;
+    text-overflow: ellipsis; /* ... dots dikhao */
+    text-decoration: none; 
+}
+
+/* Link surrounding the thumbnail (taaki thumbnail click karke video khule) */
+.video-link {
+    text-decoration: none;
+    line-height: 0; /* Image ke neeche extra space hatane ke liye */
+    flex-shrink: 0;
 }
 
 /* Copy Link Button (Small) */
 .video-list button {
-    padding: 6px 12px;
+    padding: 8px 16px; 
     border-radius: 6px;
-    border: 1px solid #a0aec0;
+    border: 1px solid #3b82f6;
     cursor: pointer;
-    background: #ffffff;
-    color: #4a5568;
-    font-size: 0.8rem;
+    background: #3b82f6;
+    color: white;
+    font-size: 0.85rem;
     font-weight: 600;
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, opacity 0.2s;
+    flex-shrink: 0; /* Button shrink na ho */
 }
 .video-list button:hover {
-    background: #e2e8f0;
-    color: #2d3748;
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
 }
 
 /* New Style for Sleep Warning */
@@ -183,12 +222,17 @@ h1 {
     box-shadow: 0 4px 8px rgba(255, 193, 7, 0.15); /* Soft yellow shadow */
 }
 
+
+/* -------------------------------------- */
+/* MEDIA QUERY - MOBILE RESPONSIVE */
+/* -------------------------------------- */
+
 @media (max-width: 768px) {
     /* Container ko chota karte hain */
     .container {
-        max-width: 95%; /* Mobile pe thoda zyada space denge */
-        padding: 20px; /* Padding kam kar denge */
-        border-radius: 8px; /* Corners chote kar denge */
+        max-width: 95%; 
+        padding: 20px; 
+        border-radius: 8px; 
     }
 
     /* Header size chota karo */
@@ -200,7 +244,7 @@ h1 {
 
     /* Input Form ko Stack Karo */
     .form {
-        flex-direction: column; /* Input aur button ko ek dusre ke upar stack kar do */
+        flex-direction: column; 
         gap: 10px;
         padding: 15px; 
     }
@@ -212,29 +256,34 @@ h1 {
     }
     
     .form button {
-        padding: 14px 25px; /* Button ko poori width do */
+        padding: 14px 25px; 
     }
 
     /* Video List Items (Links aur Copy button) */
-    .video-list li {
-        flex-direction: column; /* Links aur copy button ko stack kar do */
-        align-items: flex-start; /* Left side se align karo */
-        padding: 12px;
-        gap: 8px;
+    .video-list .video-item-detail {
+        flex-direction: row; 
+        align-items: center; 
+        padding: 8px;
+        gap: 10px;
+    }
+    
+    .video-thumbnail {
+        width: 80px; /* Thumbnail size chota kiya */
+        height: 45px;
     }
 
-    /* Link ko poori jagah do */
-    .video-list a {
-        width: 100%;
-        margin-right: 0;
+    .video-info {
+        padding-right: 5px;
+    }
+
+    .video-title {
         font-size: 0.9rem;
     }
     
     /* Copy button ko thoda bada karo */
     .video-list button {
-        align-self: flex-end; /* Copy button ko right bottom pe shift karo */
-        font-size: 0.9rem;
-        padding: 8px 15px;
+        font-size: 0.8rem;
+        padding: 6px 12px;
     }
 
     /* Result Section Text Size */
