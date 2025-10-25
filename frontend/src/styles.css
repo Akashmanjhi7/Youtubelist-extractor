@@ -170,3 +170,15 @@ h1 {
     background: #e2e8f0;
     color: #2d3748;
 }
+
+/* New Style for Sleep Warning */
+.sleep-warning {
+    background: #fff3cd; /* Yellowish background */
+    color: #856404; /* Darker text */
+    border-left: 5px solid #ffc300;
+    padding: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre-wrap; /* Text wrapping support */
+    box-shadow: 0 4px 8px rgba(255, 193, 7, 0.15); /* Soft yellow shadow */
+}

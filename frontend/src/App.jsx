@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
 
+const RENDER_SLEEP_MESSAGE = "Render ka server abhi so raha hai (spin down). Thoda sabar karo aur 60 seconds baad dubara try karo. Ya Render URL ko ek baar browser mein kholkar jaaga lo. 😉";
+
 export default function App() {
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
@@ -32,7 +34,12 @@ export default function App() {
       setTitle(data.title || "Untitled Playlist");
       setVideos(data.videos || []);
     } catch (err) {
-      setError(err.message);
+      // Check for common 'Failed to fetch' error indicative of a sleeping server
+      if (err.message.includes("Failed to fetch") || err.message.includes("NetworkError")) {
+        setError(RENDER_SLEEP_MESSAGE);
+      } else {
+        setError(err.message);
+      }
     } finally {
       setLoading(false);
     }
@@ -59,7 +66,7 @@ export default function App() {
         </button>
       </form>
 
-      {error && <div className="error">{error}</div>}
+      {error && <div className={`error ${error === RENDER_SLEEP_MESSAGE ? 'sleep-warning' : ''}`}>{error}</div>}
 
       {title && (
         <div className="result">
