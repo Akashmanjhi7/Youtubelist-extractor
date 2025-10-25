@@ -182,3 +182,66 @@ h1 {
     white-space: pre-wrap; /* Text wrapping support */
     box-shadow: 0 4px 8px rgba(255, 193, 7, 0.15); /* Soft yellow shadow */
 }
+
+@media (max-width: 768px) {
+    /* Container ko chota karte hain */
+    .container {
+        max-width: 95%; /* Mobile pe thoda zyada space denge */
+        padding: 20px; /* Padding kam kar denge */
+        border-radius: 8px; /* Corners chote kar denge */
+    }
+
+    /* Header size chota karo */
+    h1 {
+        font-size: 1.5rem;
+        padding-bottom: 10px;
+        margin-bottom: 18px;
+    }
+
+    /* Input Form ko Stack Karo */
+    .form {
+        flex-direction: column; /* Input aur button ko ek dusre ke upar stack kar do */
+        gap: 10px;
+        padding: 15px; 
+    }
+    
+    /* Input aur Button ki padding adjust karo */
+    .form input {
+        padding: 14px;
+        font-size: 1rem;
+    }
+    
+    .form button {
+        padding: 14px 25px; /* Button ko poori width do */
+    }
+
+    /* Video List Items (Links aur Copy button) */
+    .video-list li {
+        flex-direction: column; /* Links aur copy button ko stack kar do */
+        align-items: flex-start; /* Left side se align karo */
+        padding: 12px;
+        gap: 8px;
+    }
+
+    /* Link ko poori jagah do */
+    .video-list a {
+        width: 100%;
+        margin-right: 0;
+        font-size: 0.9rem;
+    }
+    
+    /* Copy button ko thoda bada karo */
+    .video-list button {
+        align-self: flex-end; /* Copy button ko right bottom pe shift karo */
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    /* Result Section Text Size */
+    .result h2 {
+        font-size: 1.2rem;
+    }
+    .result p {
+        font-size: 0.8rem;
+    }
+}
