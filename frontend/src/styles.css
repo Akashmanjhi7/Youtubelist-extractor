@@ -1,0 +1,172 @@
+/* Importing a modern, clean font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif; /* Modern Font */
+    background: linear-gradient(135deg, #e0f7fa 0%, #f0f4f8 100%); /* Light Gradient Background */
+    color: #1a202c; /* Dark text for contrast */
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px; /* Smoother corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Deeper shadow */
+}
+
+/* Header Styling */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4a5568;
+    margin: 0 0 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 15px;
+}
+
+/* Form Styling */
+.form {
+    display: flex;
+    gap: 15px; /* Increased gap */
+    margin-bottom: 20px;
+    background-color: #f7f9fb;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.form input {
+    flex: 1;
+    padding: 12px 18px; /* Bigger input area */
+    border-radius: 8px;
+    border: 1px solid #cbd5e0;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form input:focus {
+    outline: none;
+    border-color: #3b82f6; /* Focus color */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Primary Button Styling */
+.form button {
+    padding: 12px 25px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%); /* Gradient button */
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s, opacity 0.3s;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+.form button:hover:not(:disabled) {
+    background: linear-gradient(180deg, #2563eb 0%, #1e40af 100%);
+    transform: translateY(-1px);
+}
+.form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Error/Result Styling */
+.error {
+    color: #e53e3e; /* Red error */
+    background: #fed7d7;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-left: 5px solid #e53e3e;
+}
+
+.result {
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background-color: #f7f9fb;
+}
+.result h2 {
+    font-size: 1.4rem;
+    color: #2d3748;
+    margin: 0 0 10px 0;
+    word-break: break-word;
+}
+.result p {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 15px;
+}
+
+/* Copy All Button (Secondary Button) */
+.result > button {
+    padding: 8px 15px;
+    border-radius: 6px;
+    background: #4a5568; /* Darker secondary color */
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.result > button:hover:not(:disabled) {
+    background: #2d3748;
+    transform: translateY(-1px);
+}
+
+
+/* Video List Styling */
+.video-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.video-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #edf2f7;
+    transition: box-shadow 0.2s;
+}
+.video-list li:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.video-list a {
+    color: #2b6cb0; /* Link color */
+    word-break: break-word;
+    font-size: 0.95rem;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+/* Copy Link Button (Small) */
+.video-list button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #a0aec0;
+    cursor: pointer;
+    background: #ffffff;
+    color: #4a5568;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+.video-list button:hover {
+    background: #e2e8f0;
+    color: #2d3748;
+}
